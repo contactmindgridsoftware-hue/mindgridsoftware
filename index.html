@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MindGrid Software delivers high-performance enterprise software engineering, AI integration, and cloud architecture solutions for scale-focused businesses.">
+  <meta name="keywords"
+    content="Enterprise Software, Software Consultancy, Chennai, Cloud Architecture, AI Integration, B2B Software, Custom Web Applications">
+  <meta name="author" content="MindGrid Software">
+  <title>MindGrid Software — Enterprise Software Solutions Built for Scale</title>
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/style.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Wait, the standard Bootstrap CSS link is:
+       https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+       Let me write it correctly to avoid any stylesheet issues. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons 1.11.3 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="home">
+
+  <!-- 1. STICKY NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container max-width-container">
+      <a class="navbar-brand-custom" href="#home">
+        <!-- MindGrid Corporate Logo Image -->
+        <img src="images/logo.png" alt="MindGrid Logo">
+        <span>MindGrid</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navbar-collapse-custom gap-md-2">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a href="#contact" class="btn-nav-cta" id="navCtaBtn">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <header class="hero-section">
+      <div class="container max-width-container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7 text-start">
+            <span class="hero-eyebrow">SOFTWARE COMPANY &middot; CHENNAI, INDIA</span>
+            <h1 class="hero-title">Enterprise Software Solutions Built for Scale</h1>
+            <p class="hero-subheadline">MindGrid Software delivers full-stack development, AI integration, and cloud
+              architecture for forward-thinking businesses.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#portfolio" class="btn-hero-primary">Explore Our Work</a>
+              <a href="#contact" class="btn-hero-secondary">Contact Us</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 hero-mockup-wrapper">
+            <!-- CSS Dashboard Mockup (replaces generic hero images) -->
+            <div class="dashboard-mockup">
+              <div class="dashboard-header">
+                <div class="dashboard-dots">
+                  <span class="dashboard-dot red"></span>
+                  <span class="dashboard-dot yellow"></span>
+                  <span class="dashboard-dot green"></span>
+                </div>
+                <div class="dashboard-title-mock"></div>
+                <div style="width: 20px;"></div>
+              </div>
+              <div class="dashboard-body">
+                <div class="dashboard-sidebar">
+                  <div class="sidebar-item-mock active"></div>
+                  <div class="sidebar-item-mock"></div>
+                  <div class="sidebar-item-mock"></div>
+                  <div class="sidebar-item-mock"></div>
+                </div>
+                <div class="dashboard-content">
+                  <div class="dashboard-grid">
+                    <div class="dashboard-card-mock">
+                      <div class="card-label-mock"></div>
+                      <div class="card-val-mock"></div>
+                    </div>
+                    <div class="dashboard-card-mock">
+                      <div class="card-label-mock"></div>
+                      <div class="card-val-mock"></div>
+                    </div>
+                    <div class="dashboard-card-mock">
+                      <div class="card-label-mock"></div>
+                      <div class="card-val-mock"></div>
+                    </div>
+                  </div>
+                  <div class="chart-container-mock">
+                    <div class="chart-grid-mock">
+                      <div class="chart-bar-mock" style="height: 40%;"></div>
+                      <div class="chart-bar-mock" style="height: 65%;"></div>
+                      <div class="chart-bar-mock" style="height: 50%;"></div>
+                      <div class="chart-bar-mock" style="height: 85%;"></div>
+                      <div class="chart-bar-mock" style="height: 70%;"></div>
+                      <div class="chart-bar-mock" style="height: 95%;"></div>
+                    </div>
+                    <svg class="chart-lines-svg" viewBox="0 0 250 80">
+                      <defs>
+                        <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#1A73E8" stop-opacity="0.2" />
+                          <stop offset="100%" stop-color="#1A73E8" stop-opacity="0.0" />
+                        </linearGradient>
+                      </defs>
+                      <path class="chart-area"
+                        d="M 0 60 L 50 35 L 100 45 L 150 15 L 200 30 L 250 5 L 250 80 L 0 80 Z" />
+                      <path class="chart-line" d="M 0 60 L 50 35 L 100 45 L 150 15 L 200 30 L 250 5" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3. TRUST BAR / CLIENT LOGOS -->
+    <div class="trust-bar">
+      <div class="container max-width-container">
+        <p class="trust-label">Trusted by teams across industries</p>
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <span class="marquee-pill">FinTech</span>
+            <span class="marquee-pill">Healthcare</span>
+            <span class="marquee-pill">Logistics</span>
+            <span class="marquee-pill">EdTech</span>
+            <span class="marquee-pill">Retail</span>
+            <span class="marquee-pill">Manufacturing</span>
+            <span class="marquee-pill">SaaS</span>
+            <span class="marquee-pill">Government</span>
+            <!-- Repeated for seamless loop -->
+            <span class="marquee-pill">FinTech</span>
+            <span class="marquee-pill">Healthcare</span>
+            <span class="marquee-pill">Logistics</span>
+            <span class="marquee-pill">EdTech</span>
+            <span class="marquee-pill">Retail</span>
+            <span class="marquee-pill">Manufacturing</span>
+            <span class="marquee-pill">SaaS</span>
+            <span class="marquee-pill">Government</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SERVICES SECTION -->
+    <section id="services" class="section-alt">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">OUR SERVICES</span>
+          <h2 class="section-title"><span>What We Build</span></h2>
+          <p class="section-subtext">We design and engineer robust digital products designed to streamline workflows,
+            enhance productivity, and enable seamless integration.</p>
+        </div>
+        <div class="row g-4">
+          <!-- Web Applications -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-laptop card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">Web Applications</h3>
+              <p class="card-description">High-performance, secure, responsive web portals and SaaS platforms built
+                using modern single-page framework architectures.</p>
+            </div>
+          </div>
+          <!-- Mobile Apps -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-phone card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">Mobile Apps</h3>
+              <p class="card-description">Native and cross-platform applications featuring fluid user interfaces,
+                offline synchronization, and hardware integrations.</p>
+            </div>
+          </div>
+          <!-- AI & ML -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-cpu card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">AI & ML</h3>
+              <p class="card-description">Custom machine learning algorithms, NLP platforms, predictive forecasting
+                engines, and workflow automations.</p>
+            </div>
+          </div>
+          <!-- Cloud & DevOps -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-cloud-arrow-up card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">Cloud & DevOps</h3>
+              <p class="card-description">High-availability architecture design, serverless microservices deployment,
+                infrastructure-as-code, and CI/CD setup.</p>
+            </div>
+          </div>
+          <!-- API Integration -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-box-arrow-in-right card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">API Integration</h3>
+              <p class="card-description">Seamless connection of disparate enterprise applications, legacy systems,
+                identity providers, and third-party gateways.</p>
+            </div>
+          </div>
+          <!-- UI/UX Design -->
+          <div class="col-12 col-md-6 col-lg-4 fade-in-up">
+            <div class="custom-card">
+              <i class="bi bi-palette card-icon" aria-hidden="true"></i>
+              <h3 class="card-title-custom">UI/UX Design</h3>
+              <p class="card-description">High-fidelity wireframes, interactive user journey maps, brand systems, and
+                interactive UI prototypes focused on usability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW WE WORK (PROCESS) -->
+    <section id="about" class="section-white">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">OUR PROCESS</span>
+          <h2 class="section-title"><span>How We Work</span></h2>
+          <p class="section-subtext">A systematic, collaborative approach to delivering enterprise software solutions
+            efficiently, from ideation to production.</p>
+        </div>
+        <div class="process-wrapper fade-in-up">
+          <div class="row position-relative">
+            <!-- Step 1 -->
+            <div class="col-12 col-md-3 process-step">
+              <div class="process-line"></div>
+              <div class="process-number">01</div>
+              <h3 class="process-title">Discovery</h3>
+              <p class="process-desc">We deep dive into your business requirements, define technical scope, and
+                establish milestones.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-12 col-md-3 process-step">
+              <div class="process-line"></div>
+              <div class="process-number">02</div>
+              <h3 class="process-title">Design</h3>
+              <p class="process-desc">Crafting high-fidelity UI wireframes and database architecture schemas ready for
+                review.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-12 col-md-3 process-step">
+              <div class="process-line"></div>
+              <div class="process-number">03</div>
+              <h3 class="process-title">Development</h3>
+              <p class="process-desc">Clean, structured code implementations with regular automated testing and staging
+                deployments.</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="col-12 col-md-3 process-step">
+              <div class="process-number">04</div>
+              <h3 class="process-title">Delivery</h3>
+              <p class="process-desc">Final compliance review, cloud environment optimization, seamless production
+                release, and support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PORTFOLIO / CASE STUDIES -->
+    <section id="portfolio" class="section-alt">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">PORTFOLIO</span>
+          <h2 class="section-title"><span>Selected Work</span></h2>
+          <p class="section-subtext">Real problems. Real solutions. Explore our successful software deliveries across
+            industries.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="nav portfolio-tabs fade-in-up" id="portfolio-filter-tabs">
+          <button class="portfolio-tab-btn active" data-filter="All">All</button>
+          <button class="portfolio-tab-btn" data-filter="Web">Web</button>
+          <button class="portfolio-tab-btn" data-filter="Mobile">Mobile</button>
+          <button class="portfolio-tab-btn" data-filter="AI">AI</button>
+          <button class="portfolio-tab-btn" data-filter="Cloud">Cloud</button>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div class="row" id="portfolio-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. STATS SECTION (Second and final blue section) -->
+    <section id="stats-section" class="stats-section">
+      <div class="container max-width-container">
+        <div class="row g-4">
+          <div class="col-6 col-md-3 stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <p class="stat-label">Projects Completed</p>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <div class="stat-number" data-target="12">0</div>
+            <p class="stat-label">Industries Served</p>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <div class="stat-number" data-target="98">0</div>
+            <p class="stat-label">Client Retention</p>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <div class="stat-number" data-target="5">0</div>
+            <p class="stat-label">Years of Service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. TESTIMONIALS -->
+    <section id="testimonials" class="section-white">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">TESTIMONIALS</span>
+          <h2 class="section-title"><span>What Our Clients Say</span></h2>
+        </div>
+
+        <div id="testimonialsCarousel" class="carousel slide testimonial-carousel fade-in-up" data-bs-ride="carousel"
+          data-bs-interval="5000">
+          <div class="carousel-inner" id="testimonials-carousel-inner">
+            <!-- Dynamically populated by app.js -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
+            data-bs-slide="prev" aria-label="Previous Slide">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
+            data-bs-slide="next" aria-label="Next Slide">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TECHNOLOGIES -->
+    <section id="tech-stack" class="section-alt">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">OUR CORE STACKS</span>
+          <h2 class="section-title"><span>Our Tech Stack</span></h2>
+          <p class="section-subtext">We select modern, battle-tested technologies to construct highly scalable, secure,
+            and performant enterprise products.</p>
+        </div>
+
+        <div class="row justify-content-center fade-in-up">
+          <div class="col-lg-10">
+            <!-- Frontend -->
+            <div class="tech-row">
+              <span class="tech-group-label">Frontend</span>
+              <div class="tech-pills">
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">JavaScript (ES6+)</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Vue.js</span>
+                <span class="tech-pill">Bootstrap</span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="tech-row">
+              <span class="tech-group-label">Backend</span>
+              <div class="tech-pills">
+                <span class="tech-pill">ASP.NET Core</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Python (Django / FastAPI)</span>
+                <span class="tech-pill">Java Spring Boot</span>
+                <span class="tech-pill">Go</span>
+                <span class="tech-pill">REST & SOAP Web Services</span>
+              </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="tech-row">
+              <span class="tech-group-label">Mobile</span>
+              <div class="tech-pills">
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">React Native</span>
+                <span class="tech-pill">Swift (iOS)</span>
+                <span class="tech-pill">Kotlin (Android)</span>
+              </div>
+            </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="tech-row">
+              <span class="tech-group-label">Cloud & DevOps</span>
+              <div class="tech-pills">
+                <span class="tech-pill">AWS</span>
+                <span class="tech-pill">Microsoft Azure</span>
+                <span class="tech-pill">Google Cloud Platform</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">Kubernetes</span>
+                <span class="tech-pill">Terraform</span>
+                <span class="tech-pill">CI/CD Pipelines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container max-width-container fade-in-up">
+        <h2 class="cta-title">Let's Build Something That Matters</h2>
+        <p class="cta-subtext">Tell us your challenge. We'll bring the solution.</p>
+        <a href="#contact" class="btn-cta-action">Schedule a Discovery Call <i class="bi bi-arrow-right ms-2"
+            aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- 11. CONTACT SECTION -->
+    <section id="contact" class="section-white">
+      <div class="container max-width-container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">GET IN TOUCH</span>
+          <h2 class="section-title"><span>Contact Us</span></h2>
+          <p class="section-subtext">Ready to scale your business operations? Fill out the form or reach out directly.
+          </p>
+        </div>
+
+        <div class="row g-5">
+          <!-- Left Column (Contact Details) -->
+          <div class="col-12 col-md-5 fade-in-up">
+            <h3 class="fs-4 fw-bold text-dark mb-4">MindGrid HQ</h3>
+
+            <div class="contact-detail-item">
+              <i class="bi bi-geo-alt contact-detail-icon" aria-hidden="true"></i>
+              <div class="contact-detail-text">
+                <h4>Office Address</h4>
+                <p>RMZ Millenia Business Park, Phase II, Perungudi, Chennai, Tamil Nadu 600096, India</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <i class="bi bi-envelope contact-detail-icon" aria-hidden="true"></i>
+              <div class="contact-detail-text">
+                <h4>Email Address</h4>
+                <p>contact@mindgridsoftware.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <i class="bi bi-telephone contact-detail-icon" aria-hidden="true"></i>
+              <div class="contact-detail-text">
+                <h4>Phone Number</h4>
+                <p>+91 (44) 4902-8800</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <i class="bi bi-clock contact-detail-icon" aria-hidden="true"></i>
+              <div class="contact-detail-text">
+                <h4>Business Hours</h4>
+                <p>Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Contact Form) -->
+          <div class="col-12 col-md-7 fade-in-up">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                  <label for="contactName" class="form-label-custom">Full Name</label>
+                  <input type="text" class="form-control form-control-custom" id="contactName" placeholder="John Doe"
+                    required>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="contactEmail" class="form-label-custom">Work Email</label>
+                  <input type="email" class="form-control form-control-custom" id="contactEmail"
+                    placeholder="john@company.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="contactService" class="form-label-custom">Requested Service</label>
+                  <select class="form-select form-control-custom" id="contactService" required>
+                    <option value="" disabled selected>Select a service...</option>
+                    <option value="Web Applications">Web Applications</option>
+                    <option value="Mobile Apps">Mobile Apps</option>
+                    <option value="AI & ML Solutions">AI &amp; ML Solutions</option>
+                    <option value="Cloud & DevOps">Cloud &amp; DevOps</option>
+                    <option value="API Integration">API Integration &amp; Consulting</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label-custom">Project Brief / Challenge</label>
+                  <textarea class="form-control form-control-custom" id="contactMessage" rows="5"
+                    placeholder="Tell us about your project requirements, goals, and constraints..."
+                    required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-submit">Schedule Discovery Call</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. FOOTER -->
+  <footer class="footer-custom">
+    <div class="container max-width-container">
+      <div class="row g-4">
+        <!-- Logo & Tagline -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a class="footer-logo" href="#home">
+            <img src="images/logo.png" alt="MindGrid Logo">
+            <span>MindGrid</span>
+          </a>
+          <p class="footer-tagline">Architecting robust, scale-ready software solutions for enterprise clients globally.
+            Chennai's premier B2B technology consultancy.</p>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" class="footer-social-icon" target="_blank" rel="noopener"
+              aria-label="MindGrid LinkedIn Page">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com" class="footer-social-icon" target="_blank" rel="noopener"
+              aria-label="MindGrid GitHub Profile">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://twitter.com" class="footer-social-icon" target="_blank" rel="noopener"
+              aria-label="MindGrid Twitter Profile">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div class="col-6 col-lg-2 offset-lg-1">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Web Applications</a></li>
+            <li><a href="#services">Mobile Development</a></li>
+            <li><a href="#services">AI &amp; Machine Learning</a></li>
+            <li><a href="#services">Cloud Integrations</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About MindGrid</a></li>
+            <li><a href="#portfolio">Our Portfolio</a></li>
+            <li><a href="#about">How We Work</a></li>
+            <li><a href="#contact">Contact Details</a></li>
+          </ul>
+        </div>
+
+        <!-- Headquarters / Address -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-title">Headquarters</h4>
+          <p class="mb-2 text-white-50">MindGrid Software Pvt. Ltd.</p>
+          <p class="mb-0 text-muted">RMZ Millenia Business Park, Phase II, Perungudi, Chennai, Tamil Nadu 600096, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="row footer-bottom-border">
+        <div class="col-12 text-center text-md-start d-md-flex justify-content-between align-items-center">
+          <p class="mb-2 mb-md-0">&copy; 2025 MindGrid Software Pvt. Ltd. &middot; Chennai, India. All rights reserved.
+          </p>
+          <p class="mb-0 text-muted" style="font-size: 12px;">Designed to connect with .NET WCF REST/SOAP backend
+            services.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 Bundled JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Core App Controller Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>

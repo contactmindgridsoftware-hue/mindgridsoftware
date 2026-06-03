@@ -1,0 +1,22 @@
+[
+  {
+    "quote": "MindGrid Software delivered our core transaction ledger system three weeks ahead of schedule. Their technical architecture is sound, and their engineers integrated seamlessly with our internal security and compliance teams.",
+    "clientName": "Rajesh Subramanian",
+    "company": "Chief Technology Officer, Vertex Assets"
+  },
+  {
+    "quote": "Their cloud-native architecture review and implementation helped us scale our logistics pipeline during peak holiday demand without a single second of downtime. An exceptional engineering partner.",
+    "clientName": "Priya Nair",
+    "company": "VP of Engineering, LogiSpeed India"
+  },
+  {
+    "quote": "The predictive forecasting models developed by MindGrid have transformed how we plan our retail inventory. We have seen a direct, measurable reduction in holding costs and out-of-stock scenarios.",
+    "clientName": "David Miller",
+    "company": "Director of Supply Chain, Apex Retail Group"
+  },
+  {
+    "quote": "Developing a HIPAA-compliant app requires deep attention to detail. MindGrid exceeded our expectations, delivering an intuitive, fully encrypted platform that our doctors and patients love.",
+    "clientName": "Dr. Amit Verma",
+    "company": "Co-Founder, CareConnect Health"
+  }
+]

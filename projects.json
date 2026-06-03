@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "FinTech Core Ledger Platform",
+    "category": "Web",
+    "description": "High-throughput transaction ledger and client dashboard built for an enterprise asset management firm, featuring real-time settlement and compliance reporting.",
+    "tech": ["ASP.NET Core", "React", "SQL Server", "Redis"],
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Predictive Demand Forecasting Engine",
+    "category": "AI",
+    "description": "Machine learning system integrated with a global supply chain to forecast retail inventory requirements, reducing waste by 22% using advanced regression models.",
+    "tech": ["Python", "TensorFlow", "AWS SageMaker", "PostgreSQL"],
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Healthcare Telemedicine Mobile App",
+    "category": "Mobile",
+    "description": "HIPAA-compliant native iOS and Android application with end-to-end encrypted video consultations, electronic prescriptions, and appointment scheduling.",
+    "tech": ["Flutter", "Dart", "Firebase", "WebRTC"],
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Cloud-Native Logistics Orchestrator",
+    "category": "Cloud",
+    "description": "Serverless microservices architecture handling fleet routing, GPS tracking, and delivery dispatch for a pan-India third-party logistics provider.",
+    "tech": ["AWS Lambda", "Node.js", "DynamoDB", "Terraform"],
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Autonomous Clinical Trial Analytics",
+    "category": "AI",
+    "description": "Natural language processing platform analyzing medical reports to accelerate patient cohort selection for multi-phase clinical oncology trials.",
+    "tech": ["Python", "PyTorch", "FastAPI", "MongoDB"],
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "Retail Omnichannel POS Portal",
+    "category": "Web",
+    "description": "Cloud-synchronized point of sale system with offline capability, real-time inventory updates, and multi-tenant store management consoles.",
+    "tech": ["Vue.js", "Express", "SQLite", "Docker"],
+    "link": "#"
+  }
+]

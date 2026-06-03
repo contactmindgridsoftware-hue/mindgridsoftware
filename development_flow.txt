@@ -1,0 +1,56 @@
+========================================================================
+DEVELOPMENT FLOW: MINDGRID SOFTWARE B2B PORTFOLIO WEBSITE
+========================================================================
+
+1. ARCHITECTURE & FILE STRUCTURE
+   - Create root index.html (semantic tags, Bootstrap 5.3 CDN, Google Fonts, Bootstrap Icons).
+   - Create styles.css (strict professional color theory, custom components, typography rules).
+   - Create app.js (AJAX fetches, filtering, animations, state management, form handling).
+   - Create projects.json (mock data for 6 professional B2B software projects).
+   - Create testimonials.json (mock data for client testimonials).
+
+2. DATA DEFINITION (JSON)
+   - Define projects.json with: id, title, category, description, tech[], link.
+   - Define testimonials.json with: quote, clientName, company.
+
+3. STRUCTURE & LAYOUT (index.html)
+   - Layout all 12 requested sections sequentially:
+     1. Sticky Navbar
+     2. Hero Section (CSS-only dashboard illustration, no image assets)
+     3. Trust Bar / Client Logos (marquee marquee of industries)
+     4. Services Section (6 cards, Bootstrap Icons)
+     5. How We Work / Process (Discovery -> Design -> Development -> Delivery)
+     6. Portfolio / Case Studies (tabs, project grid, AJAX loading spinner)
+     7. Stats Section (4 columns, count-up trigger placeholders)
+     8. Testimonials Section (AJAX-loaded carousel)
+     9. Technologies Tag Cloud (grouped frontend/backend/mobile/cloud)
+     10. CTA Banner (light blue layout)
+     11. Contact Section (2-column details & AJAX form with WCF readiness)
+     12. Footer (4 columns + copyright & socials)
+
+4. CUSTOM STYLING (styles.css)
+   - Declare CSS custom properties (colors, typography rules).
+   - Apply Plus Jakarta Sans for headings, Inter for body copy.
+   - Set up Section Alternation (white -> #F3F4F6) and page-wide background #FAFAFA.
+   - Customise cards (white background, border-radius 12px, border #E5E7EB, box-shadow).
+   - Customise custom marquee for industry client trust bar.
+   - Add micro-animations (0.2s duration limits, fade-in-up class).
+
+5. INTERACTIVE LOGIC & AJAX (app.js)
+   - Dynamic portfolio fetching & client-side filtering.
+   - Dynamic testimonial loading & Carousel slide injection.
+   - IntersectionObserver implementation for scroll animations and Stats count-up.
+   - Form AJAX handler (fetch 'submit.php' or WCF SOAP/REST).
+
+6. .NET WCF BACKEND SERVICE INTEGRATION LAYER
+   - Add a clean toggle in app.js: const USE_WCF_BACKEND = false;
+   - Implement both channels:
+     * Toggle OFF: Fetch local projects.json, testimonials.json, and simulate contact form success.
+     * Toggle ON: Fetch from WCF Service endpoints (REST/JSON or SOAP-compliant endpoints) for projects, testimonials, and contact submissions.
+   - Document how to hook up to the WCF service in C#/.NET.
+
+7. COMPLIANCE & QUALITY ASSURANCE
+   - Validate mobile-first responsiveness (breakpoints).
+   - Validate strict design system constraints (no neon, no custom text gradients, correct spacing).
+   - Ensure accessibility standards (alt, aria-labels, semantic outline).
+========================================================================
