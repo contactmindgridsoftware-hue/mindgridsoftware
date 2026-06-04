@@ -18,6 +18,18 @@ const CONFIG = {
     getProjects: '/GetProjects',         // HTTP GET (returns JSON array of projects)
     getTestimonials: '/GetTestimonials', // HTTP GET (returns JSON array of testimonials)
     submitContact: '/SubmitContact'      // HTTP POST (receives JSON contact form object)
+  },
+
+  // WhatsApp click-to-chat redirect settings (opens WhatsApp with a pre-filled message)
+  WHATSAPP: {
+    ENABLED: false, // Set to true if you want to redirect the user to WhatsApp
+    PHONE: '917667201734' // Recipient phone number (international format, no + or leading zeros)
+  },
+
+  // Email notification settings (sends a silent email in the background without redirecting)
+  EMAIL: {
+    ENABLED: true,
+    ACCESS_KEY: '668a81d5-e67a-4feb-8c77-e51dfeb6b5b5' // Get a free access key at https://web3forms.com
   }
 };
 
@@ -102,7 +114,7 @@ function highlightActiveSection() {
    ========================================================================== */
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll('.fade-in-up');
-  
+
   const observer = new IntersectionObserver((entries, observerInstance) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -209,7 +221,7 @@ let allProjects = [];
 
 async function loadPortfolio() {
   const gridContainer = document.getElementById('portfolio-grid');
-  
+
   // Show skeleton loader spinner
   gridContainer.innerHTML = `
     <div class="skeleton-loader" id="portfolio-loader">
@@ -401,7 +413,7 @@ function animateCountUp(element) {
   const target = parseInt(targetText, 10);
   const isPlus = targetText.includes('+');
   const isPercent = targetText.includes('%');
-  
+
   let current = 0;
   const duration = 1200; // 1.2 seconds count duration
   const frameRate = 1000 / 60; // 60 FPS
@@ -459,6 +471,7 @@ function initContactForm() {
     const formData = {
       name: document.getElementById('contactName').value.trim(),
       email: document.getElementById('contactEmail').value.trim(),
+      phone: document.getElementById('contactPhone').value.trim(),
       service: document.getElementById('contactService').value,
       message: document.getElementById('contactMessage').value.trim()
     };
@@ -478,6 +491,35 @@ function initContactForm() {
         if (!response.ok) throw new Error('WCF Service connection failed');
         result = await response.json();
       } else {
+        // Send email in the background via Web3Forms (does not redirect)
+        if (CONFIG.EMAIL && CONFIG.EMAIL.ENABLED && CONFIG.EMAIL.ACCESS_KEY !== 'YOUR_WEB3FORMS_ACCESS_KEY') {
+          try {
+            const emailResponse = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                access_key: CONFIG.EMAIL.ACCESS_KEY,
+                subject: `New MindGrid Lead from ${formData.name}`,
+                from_name: 'MindGrid Portfolio Website',
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                service: formData.service,
+                message: formData.message
+              })
+            });
+            const emailResult = await emailResponse.json();
+            if (!emailResult.success) {
+              console.error('Web3Forms failed:', emailResult);
+            }
+          } catch (err) {
+            console.error('Web3Forms background transfer error:', err);
+          }
+        }
+
         // Fetch local contact_response.json file as request result
         try {
           const response = await fetch('contact_response.json');
@@ -492,6 +534,24 @@ function initContactForm() {
 
       if (result.success) {
         showToast('success', result.message || 'Message sent successfully!');
+
+        // Redirect to WhatsApp automatically if configured
+        if (CONFIG.WHATSAPP && CONFIG.WHATSAPP.ENABLED) {
+          const waMessageText = `*New MindGrid Inquiry*\n\n` +
+            `*Name:* ${formData.name}\n` +
+            `*Email:* ${formData.email}\n` +
+            `*Phone:* ${formData.phone}\n` +
+            `*Requested Service:* ${formData.service}\n\n` +
+            `*Project Brief / Challenge:*\n${formData.message}`;
+
+          const waUrl = `https://wa.me/${CONFIG.WHATSAPP.PHONE}?text=${encodeURIComponent(waMessageText)}`;
+
+          // Open WhatsApp web/app in a new window/tab after a short delay so the toast is readable
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+          }, 1500);
+        }
+
         form.reset();
         form.classList.remove('was-validated');
       } else {
