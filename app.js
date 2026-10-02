@@ -817,9 +817,14 @@ Please let me know how we can proceed!`;
   
   const encodedMessage = encodeURIComponent(message);
   
-  // Randomly distribute leads
+  // Randomly distribute leads, but prevent sending to the user's own number (if a sales rep is testing)
+  const normalizedUserPhone = phone.replace(/\D/g, '').slice(-10);
   const salesNumbers = ['917667201734', '919514302850'];
-  const selectedNumber = salesNumbers[Math.floor(Math.random() * salesNumbers.length)];
+  let selectedNumber = salesNumbers[Math.floor(Math.random() * salesNumbers.length)];
+  
+  if (selectedNumber.endsWith(normalizedUserPhone)) {
+    selectedNumber = salesNumbers.find(num => !num.endsWith(normalizedUserPhone)) || salesNumbers[0];
+  }
   
   const whatsappUrl = `https://wa.me/${selectedNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
