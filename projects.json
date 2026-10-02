@@ -1,50 +1,52 @@
 [
   {
     "id": 1,
-    "title": "FinTech Core Ledger Platform",
+    "title": "Shop Portfolio Web Application",
     "category": "Web",
-    "description": "High-throughput transaction ledger and client dashboard built for an enterprise asset management firm, featuring real-time settlement and compliance reporting.",
-    "tech": ["ASP.NET Core", "React", "SQL Server", "Redis"],
-    "link": "#"
+    "description": "A scalable, high-end e-commerce platform for clothing and jewelry, featuring an AI-driven recommendation engine.",
+    "caseStudyDetails": "<div class='mb-4'><h5 class='fw-bold' style='color: var(--primary-dark)'>The Request</h5><p>The client wanted a luxurious online presence for their high-end clothing and gold jewelry store. They specifically requested a modern UI with an AI system that could track user browsing patterns and suggest complementary pieces (e.g., matching a gold necklace with a specific dress type).</p></div><div><h5 class='fw-bold' style='color: var(--primary-dark)'>Development Process</h5><p>We built the application using ASP.NET Core MVC for a robust backend and Entity Framework for complex inventory management. We integrated Azure OpenAI to process user behavior data in real-time, feeding personalized recommendations to the frontend dashboard.</p></div>",
+    "tech": ["ASP.NET Core MVC", "Entity Framework", "Azure OpenAI", "SQL Server"],
+    "image": "images/portfolio_shop.jpg",
+    "link": "case-study.html?id=1"
   },
   {
     "id": 2,
-    "title": "Predictive Demand Forecasting Engine",
-    "category": "AI",
-    "description": "Machine learning system integrated with a global supply chain to forecast retail inventory requirements, reducing waste by 22% using advanced regression models.",
-    "tech": ["Python", "TensorFlow", "AWS SageMaker", "PostgreSQL"],
-    "link": "#"
+    "title": "School ERP System",
+    "category": "Web",
+    "description": "An integrated student and fee management system utilizing ML.NET to predict student dropout risks.",
+    "caseStudyDetails": "<div class='mb-4'><h5 class='fw-bold' style='color: var(--primary-dark)'>The Request</h5><p>A regional educational trust needed to centralize operations across 5 campuses. They required standard ERP features (attendance, fees, staff management) but also wanted an AI capability to flag students at high risk of dropping out based on attendance and fee payment patterns.</p></div><div><h5 class='fw-bold' style='color: var(--primary-dark)'>Development Process</h5><p>We developed a highly responsive Blazor WebAssembly frontend communicating with an ASP.NET Core Web API. For the AI component, we trained a custom classification model using ML.NET, which ingests historical student data from PostgreSQL to generate daily risk reports for administrators.</p></div>",
+    "tech": ["Blazor WebAssembly", "ASP.NET Core API", "ML.NET", "PostgreSQL"],
+    "image": "images/portfolio_school.jpg",
+    "link": "case-study.html?id=2"
   },
   {
     "id": 3,
-    "title": "Healthcare Telemedicine Mobile App",
-    "category": "Mobile",
-    "description": "HIPAA-compliant native iOS and Android application with end-to-end encrypted video consultations, electronic prescriptions, and appointment scheduling.",
-    "tech": ["Flutter", "Dart", "Firebase", "WebRTC"],
-    "link": "#"
+    "title": "Web & WhatsApp Bot with AI",
+    "category": "AI",
+    "description": "An automated customer support solution combining a modern web dashboard and a WhatsApp bot powered by Semantic Kernel.",
+    "caseStudyDetails": "<div class='mb-4'><h5 class='fw-bold' style='color: var(--primary-dark)'>The Request</h5><p>The client was overwhelmed by WhatsApp inquiries and needed an intelligent bot that could not only answer FAQs but also qualify leads and schedule appointments directly into their system.</p></div><div><h5 class='fw-bold' style='color: var(--primary-dark)'>Development Process</h5><p>We architected a C# .NET 8 service acting as the webhook for the WhatsApp Business API. We integrated Semantic Kernel to orchestrate calls to Azure AI, allowing the bot to maintain context, understand conversational nuances, and automatically push qualified lead data to the client's internal dashboard.</p></div>",
+    "tech": ["C# .NET 8", "Semantic Kernel", "WhatsApp API", "Azure AI"],
+    "image": "images/portfolio_bot.jpg",
+    "link": "case-study.html?id=3"
   },
   {
     "id": 4,
-    "title": "Cloud-Native Logistics Orchestrator",
-    "category": "Cloud",
-    "description": "Serverless microservices architecture handling fleet routing, GPS tracking, and delivery dispatch for a pan-India third-party logistics provider.",
-    "tech": ["AWS Lambda", "Node.js", "DynamoDB", "Terraform"],
-    "link": "#"
+    "title": "College Portfolio Builder",
+    "category": "Web",
+    "description": "An interactive platform for students to build professional portfolios, leveraging Azure AI Vision for automated certificate tagging.",
+    "caseStudyDetails": "<div class='mb-4'><h5 class='fw-bold' style='color: var(--primary-dark)'>The Request</h5><p>A university wanted a centralized platform for students to showcase their work to potential employers. They needed a feature where students could upload bulk documents (certificates, hackathon photos) and have them automatically categorized.</p></div><div><h5 class='fw-bold' style='color: var(--primary-dark)'>Development Process</h5><p>We built the frontend with React and the backend with ASP.NET Core. When a student uploads an image, the backend streams it to Azure AI Vision, which performs OCR and object detection to extract skills and automatically generate tags (e.g., 'Java Developer', 'First Prize'), saving students hours of manual data entry.</p></div>",
+    "tech": ["ASP.NET Core", "React", "Azure AI Vision", "Cosmos DB"],
+    "image": "images/portfolio_college.jpg",
+    "link": "case-study.html?id=4"
   },
   {
     "id": 5,
-    "title": "Autonomous Clinical Trial Analytics",
-    "category": "AI",
-    "description": "Natural language processing platform analyzing medical reports to accelerate patient cohort selection for multi-phase clinical oncology trials.",
-    "tech": ["Python", "PyTorch", "FastAPI", "MongoDB"],
-    "link": "#"
-  },
-  {
-    "id": 6,
-    "title": "Retail Omnichannel POS Portal",
-    "category": "Web",
-    "description": "Cloud-synchronized point of sale system with offline capability, real-time inventory updates, and multi-tenant store management consoles.",
-    "tech": ["Vue.js", "Express", "SQLite", "Docker"],
-    "link": "#"
+    "title": "Custom Web Application",
+    "category": "Cloud",
+    "description": "A modular enterprise web application custom-built for specific client requirements, featuring AI-powered data visualization.",
+    "caseStudyDetails": "<div class='mb-4'><h5 class='fw-bold' style='color: var(--primary-dark)'>The Request</h5><p>An enterprise client needed a custom internal tool to unify their disjointed data sources. Crucially, executives wanted to be able to type natural language questions (e.g., 'Show me sales for Q3') and have the application generate dynamic charts instantly.</p></div><div><h5 class='fw-bold' style='color: var(--primary-dark)'>Development Process</h5><p>We deployed a suite of C# Microservices in Docker containers. We utilized the OpenAI API to translate natural language queries into complex SQL/GraphQL queries against their unified Redis and SQL databases. The frontend then dynamically renders the resulting data using advanced charting libraries.</p></div>",
+    "tech": ["C# Microservices", "OpenAI API", "Redis", "Docker"],
+    "image": "images/portfolio_custom.jpg",
+    "link": "case-study.html?id=5"
   }
 ]

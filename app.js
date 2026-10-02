@@ -137,55 +137,53 @@ function initScrollAnimations() {
    ========================================================================== */
 const FALLBACK_DATA = {
   projects: [
-    {
-      "id": 1,
-      "title": "FinTech Core Ledger Platform",
-      "category": "Web",
-      "description": "High-throughput transaction ledger and client dashboard built for an enterprise asset management firm, featuring real-time settlement and compliance reporting.",
-      "tech": ["ASP.NET Core", "React", "SQL Server", "Redis"],
-      "link": "#"
-    },
-    {
-      "id": 2,
-      "title": "Predictive Demand Forecasting Engine",
-      "category": "AI",
-      "description": "Machine learning system integrated with a global supply chain to forecast retail inventory requirements, reducing waste by 22% using advanced regression models.",
-      "tech": ["Python", "TensorFlow", "AWS SageMaker", "PostgreSQL"],
-      "link": "#"
-    },
-    {
-      "id": 3,
-      "title": "Healthcare Telemedicine Mobile App",
-      "category": "Mobile",
-      "description": "HIPAA-compliant native iOS and Android application with end-to-end encrypted video consultations, electronic prescriptions, and appointment scheduling.",
-      "tech": ["Flutter", "Dart", "Firebase", "WebRTC"],
-      "link": "#"
-    },
-    {
-      "id": 4,
-      "title": "Cloud-Native Logistics Orchestrator",
-      "category": "Cloud",
-      "description": "Serverless microservices architecture handling fleet routing, GPS tracking, and delivery dispatch for a pan-India third-party logistics provider.",
-      "tech": ["AWS Lambda", "Node.js", "DynamoDB", "Terraform"],
-      "link": "#"
-    },
-    {
-      "id": 5,
-      "title": "Autonomous Clinical Trial Analytics",
-      "category": "AI",
-      "description": "Natural language processing platform analyzing medical reports to accelerate patient cohort selection for multi-phase clinical oncology trials.",
-      "tech": ["Python", "PyTorch", "FastAPI", "MongoDB"],
-      "link": "#"
-    },
-    {
-      "id": 6,
-      "title": "Retail Omnichannel POS Portal",
-      "category": "Web",
-      "description": "Cloud-synchronized point of sale system with offline capability, real-time inventory updates, and multi-tenant store management consoles.",
-      "tech": ["Vue.js", "Express", "SQLite", "Docker"],
-      "link": "#"
-    }
-  ],
+  {
+    "id": 1,
+    "title": "Shop Portfolio Web Application",
+    "category": "Web",
+    "description": "A scalable, high-end e-commerce platform for clothing and jewelry, featuring an AI-driven recommendation engine built on .NET that suggests products based on user browsing habits.",
+    "tech": ["ASP.NET Core MVC", "Entity Framework", "Azure OpenAI", "SQL Server"],
+    "image": "images/portfolio_shop.jpg",
+    "link": "case-study.html?id=1"
+  },
+  {
+    "id": 2,
+    "title": "School ERP System",
+    "category": "Web",
+    "description": "An integrated student and fee management system. Includes a machine learning module utilizing ML.NET to predict student dropout risks and optimize fee collection schedules.",
+    "tech": ["Blazor WebAssembly", "ASP.NET Core API", "ML.NET", "PostgreSQL"],
+    "image": "images/portfolio_school.jpg",
+    "link": "case-study.html?id=2"
+  },
+  {
+    "id": 3,
+    "title": "Web & WhatsApp Bot with AI",
+    "category": "AI",
+    "description": "An automated customer support solution combining a modern web dashboard and a WhatsApp bot. Powered by Semantic Kernel and Azure AI to handle natural language queries.",
+    "tech": ["C# .NET 8", "Semantic Kernel", "WhatsApp API", "Azure AI"],
+    "image": "images/portfolio_bot.jpg",
+    "link": "case-study.html?id=3"
+  },
+  {
+    "id": 4,
+    "title": "College Portfolio Builder",
+    "category": "Web",
+    "description": "An interactive platform for students to build professional portfolios. Leverages Azure AI Vision to automatically tag and categorize uploaded certificates and project screenshots.",
+    "tech": ["ASP.NET Core", "React", "Azure AI Vision", "Cosmos DB"],
+    "image": "images/portfolio_college.jpg",
+    "link": "case-study.html?id=4"
+  },
+  {
+    "id": 5,
+    "title": "Custom Web Application",
+    "category": "Cloud",
+    "description": "A highly modular enterprise web application custom-built for specific client requirements. Features AI-powered data visualization and automated report generation via natural language.",
+    "tech": ["C# Microservices", "OpenAI API", "Redis", "Docker"],
+    "image": "images/portfolio_custom.jpg",
+    "link": "case-study.html?id=5"
+  }
+]
+,
   testimonials: [
     {
       "quote": "MindGrid Software delivered our core transaction ledger system three weeks ahead of schedule. Their technical architecture is sound, and their engineers integrated seamlessly with our internal security and compliance teams.",
@@ -287,19 +285,24 @@ function renderProjects(projects) {
 
     const techPills = project.tech.map(t => `<span class="portfolio-tag">${t}</span>`).join('');
 
+    const bgImage = project.image ? `background-image: url('${project.image}'); background-size: cover; background-position: center;` : '';
+    const overlay = project.image ? `<div style="background: rgba(0,0,0,0.5); width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 0;"></div>` : '';
+    const iconStyle = project.image ? 'color: white; z-index: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.5);' : '';
+
     const col = document.createElement('div');
     col.className = 'col-12 col-md-6 col-lg-4 mb-4';
     col.innerHTML = `
       <div class="portfolio-card">
-        <div class="portfolio-card-header">
-          <span class="category-badge">${project.category}</span>
-          <i class="bi ${iconClass} portfolio-header-icon"></i>
+        <div class="portfolio-card-header" style="${bgImage}">
+          ${overlay}
+          <span class="category-badge" style="z-index: 1;">${project.category}</span>
+          <i class="bi ${iconClass} portfolio-header-icon" style="${iconStyle}"></i>
         </div>
         <div class="portfolio-card-body">
           <h3 class="portfolio-card-title">${project.title}</h3>
           <p class="portfolio-card-desc">${project.description}</p>
-          <div class="portfolio-tags">${techPills}</div>
-          <a href="${project.link}" class="portfolio-link">
+          
+          <a href="#" onclick="openCaseStudyModal(${project.id}); return false;" class="portfolio-link">
             View Case Study <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -607,3 +610,242 @@ function showToast(type, message) {
   }, 5000);
 }
 
+/* ==========================================================================
+   10. Case Study Modal Logic
+   ========================================================================== */
+window.openCaseStudyModal = function(id) {
+  const project = allProjects.find(p => p.id === id);
+  if(!project) return;
+  
+  document.getElementById('csModalTitle').textContent = project.title;
+  document.getElementById('csModalCategory').textContent = project.category.toUpperCase();
+  document.getElementById('csModalDesc').innerHTML = project.caseStudyDetails || project.description;
+  
+  if(project.image) {
+    document.getElementById('csModalImageContainer').style.backgroundImage = `url('${project.image}')`;
+    document.getElementById('csModalImageContainer').style.display = 'block';
+  } else {
+    document.getElementById('csModalImageContainer').style.display = 'none';
+  }
+  
+  document.getElementById('csModalTech').innerHTML = project.tech.map(t => `<span class="portfolio-tag">${t}</span>`).join('');
+  
+  const modal = new bootstrap.Modal(document.getElementById('caseStudyModal'));
+  modal.show();
+}
+
+
+/* ==========================================================================
+   11. Pricing Calculator
+   ========================================================================== */
+window.calculateTotal = function() {
+  const inputs = document.querySelectorAll('.pricing-calc-input');
+  let total = 0;
+  inputs.forEach(input => {
+    if(input.checked) {
+      total += parseInt(input.getAttribute('data-price'));
+    }
+  });
+  document.getElementById('pricingTotal').innerText = '₹' + total.toLocaleString('en-IN');
+};
+
+/* ==========================================================================
+   12. AI Chatbot Widget Logic
+   ========================================================================== */
+window.toggleChatbot = function() {
+  const win = document.getElementById('chatbotWindow');
+  if(win.style.display === 'none') {
+    win.style.display = 'flex';
+    document.getElementById('chatbotInput').focus();
+  } else {
+    win.style.display = 'none';
+  }
+};
+
+window.sendChat = function() {
+  const input = document.getElementById('chatbotInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  
+  const container = document.getElementById('chatbotMessages');
+  
+  // User message
+  const userDiv = document.createElement('div');
+  userDiv.className = 'user-msg';
+  userDiv.innerText = msg;
+  container.appendChild(userDiv);
+  input.value = '';
+  container.scrollTop = container.scrollHeight;
+  
+  // Fake Bot Delay
+  setTimeout(() => {
+    const botDiv = document.createElement('div');
+    botDiv.className = 'bot-msg';
+    botDiv.innerText = 'Thanks for reaching out! A MindGrid AI specialist will respond to you shortly.';
+    container.appendChild(botDiv);
+    container.scrollTop = container.scrollHeight;
+  }, 1000);
+};
+
+window.handleChatInput = function(e) {
+  if(e.key === 'Enter') {
+    sendChat();
+  }
+};
+
+/* ==========================================================================
+   13. WhatsApp Sales Integration
+   ========================================================================== */
+window.contactSalesWhatsApp = function() {
+  // Hide pricing modal
+  const pricingModalEl = document.getElementById('pricingModal');
+  const pricingModal = bootstrap.Modal.getInstance(pricingModalEl) || new bootstrap.Modal(pricingModalEl);
+  pricingModal.hide();
+  
+  // Show details modal
+  const contactModal = new bootstrap.Modal(document.getElementById('contactSalesModal'));
+  contactModal.show();
+};
+
+window.submitToWhatsApp = function() {
+  const nameInput = document.getElementById('salesName');
+  const phoneInput = document.getElementById('salesPhone');
+  const emailInput = document.getElementById('salesEmail');
+  const reqsInput = document.getElementById('salesReqs');
+  
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const email = emailInput.value.trim();
+  const upgrade = document.getElementById('salesUpgrade').value;
+  const requirements = reqsInput.value.trim();
+
+  let isValid = true;
+  
+  // Name Validation
+  if(!name) {
+    nameInput.classList.add('is-invalid');
+    document.getElementById('salesNameError').classList.remove('d-none');
+    document.getElementById('salesNameError').classList.add('d-block');
+    isValid = false;
+  } else {
+    nameInput.classList.remove('is-invalid');
+    document.getElementById('salesNameError').classList.remove('d-block');
+    document.getElementById('salesNameError').classList.add('d-none');
+  }
+
+  // Phone Validation (Basic 10 digits check)
+  const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  if(!phone || !phoneRegex.test(phone.replace(/\s/g, ''))) {
+    phoneInput.classList.add('is-invalid');
+    document.getElementById('salesPhoneError').classList.remove('d-none');
+    document.getElementById('salesPhoneError').classList.add('d-block');
+    isValid = false;
+  } else {
+    phoneInput.classList.remove('is-invalid');
+    document.getElementById('salesPhoneError').classList.remove('d-block');
+    document.getElementById('salesPhoneError').classList.add('d-none');
+  }
+
+  // Email Validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email || !emailRegex.test(email)) {
+    emailInput.classList.add('is-invalid');
+    document.getElementById('salesEmailError').classList.remove('d-none');
+    document.getElementById('salesEmailError').classList.add('d-block');
+    isValid = false;
+  } else {
+    emailInput.classList.remove('is-invalid');
+    document.getElementById('salesEmailError').classList.remove('d-block');
+    document.getElementById('salesEmailError').classList.add('d-none');
+  }
+
+  // Requirements Validation
+  if(!requirements) {
+    reqsInput.classList.add('is-invalid');
+    document.getElementById('salesReqsError').classList.remove('d-none');
+    document.getElementById('salesReqsError').classList.add('d-block');
+    isValid = false;
+  } else {
+    reqsInput.classList.remove('is-invalid');
+    document.getElementById('salesReqsError').classList.remove('d-block');
+    document.getElementById('salesReqsError').classList.add('d-none');
+  }
+
+  if(!isValid) return;
+
+  const inputs = document.querySelectorAll('.pricing-calc-input');
+  let total = 0;
+  let features = [];
+  
+  const baseTitle = document.getElementById('baseAppTitle').innerText;
+  
+  // Base Application
+  if(inputs[0] && inputs[0].checked) {
+    total += parseInt(inputs[0].getAttribute('data-price'));
+    features.push(baseTitle);
+  }
+  // AI Chatbot
+  if(inputs[1] && inputs[1].checked) {
+    total += parseInt(inputs[1].getAttribute('data-price'));
+    features.push("AI Chatbot Integration");
+  }
+  // Admin Dashboard
+  if(inputs[2] && inputs[2].checked) {
+    total += parseInt(inputs[2].getAttribute('data-price'));
+    features.push("Advanced Admin Dashboard");
+  }
+  
+  const formattedTotal = '₹' + total.toLocaleString('en-IN');
+  const message = `Hello MindGrid Software Sales Team! I am interested in a Custom Plan.
+
+*Contact Details:*
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+
+*Project Requirements:*
+${requirements}
+
+*Future Upgrade Plans:* ${upgrade}
+
+*Features Selected:*
+- ${features.join('\n- ')}
+
+*Estimated Total:* ${formattedTotal}
+
+Please let me know how we can proceed!`;
+  
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Randomly distribute leads
+  const salesNumbers = ['917667201734', '919514302850'];
+  const selectedNumber = salesNumbers[Math.floor(Math.random() * salesNumbers.length)];
+  
+  const whatsappUrl = `https://wa.me/${selectedNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+  
+  // Hide modal
+  const contactModalEl = document.getElementById('contactSalesModal');
+  const contactModal = bootstrap.Modal.getInstance(contactModalEl);
+  if (contactModal) contactModal.hide();
+};
+
+window.openDynamicPricingModal = function(planName, basePrice) {
+  // Update the modal's Base Application title and price
+  document.getElementById('baseAppTitle').innerText = planName;
+  
+  const baseToggle = document.getElementById('baseAppToggle');
+  baseToggle.setAttribute('data-price', basePrice);
+  
+  // Reset other toggles
+  const inputs = document.querySelectorAll('.pricing-calc-input');
+  if(inputs[1]) inputs[1].checked = false;
+  if(inputs[2]) inputs[2].checked = false;
+  
+  // Recalculate total
+  calculateTotal();
+  
+  // Show the modal
+  const modal = new bootstrap.Modal(document.getElementById('pricingModal'));
+  modal.show();
+};

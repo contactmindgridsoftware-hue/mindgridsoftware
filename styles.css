@@ -1166,3 +1166,335 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 17. Pricing Section */
+.pricing-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(15, 82, 186, 0.15);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.pricing-card.premium {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-card.premium .pricing-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: 12px;
+}
+
+.pricing-card.premium .pricing-title {
+  color: #BFDBFE;
+}
+
+.pricing-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-pricing {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.btn-pricing:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-pricing-popular {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-pricing-popular:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-pricing-premium {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.btn-pricing-premium:hover {
+  background-color: #3B82F6;
+}
+
+.rules-card-modern {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.rules-title-modern {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.rule-item {
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: var(--neutral-50);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.rule-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--primary-light);
+  background-color: var(--white);
+}
+
+.rule-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+}
+
+.rule-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 12px;
+}
+
+.rule-desc {
+  font-size: 14px;
+  color: var(--neutral-700);
+  margin-bottom: 0;
+  line-height: 1.6;
+}/* ==========================================================================
+   Chatbot Widget
+   ========================================================================== */
+.chatbot-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1050;
+  font-family: var(--font-body);
+}
+
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  font-size: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-origin: bottom right;
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h5 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chatbot-messages {
+  height: 300px;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bot-msg, .user-msg {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.bot-msg {
+  background: #e9ecef;
+  color: var(--neutral-800);
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.user-msg {
+  background: var(--primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.chatbot-input-area {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.chatbot-input-area input {
+  flex-grow: 1;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  padding: 8px 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chatbot-input-area input:focus {
+  border-color: var(--primary);
+}
+
+.chatbot-input-area button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Pricing Calculator Modal
+   ========================================================================== */
+.calculator-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.calculator-row:last-child {
+  border-bottom: none;
+}
+
+.calculator-total {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-top: 20px;
+}
