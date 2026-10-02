@@ -137,53 +137,53 @@ function initScrollAnimations() {
    ========================================================================== */
 const FALLBACK_DATA = {
   projects: [
-  {
-    "id": 1,
-    "title": "Shop Portfolio Web Application",
-    "category": "Web",
-    "description": "A scalable, high-end e-commerce platform for clothing and jewelry, featuring an AI-driven recommendation engine built on .NET that suggests products based on user browsing habits.",
-    "tech": ["ASP.NET Core MVC", "Entity Framework", "Azure OpenAI", "SQL Server"],
-    "image": "images/portfolio_shop.jpg",
-    "link": "case-study.html?id=1"
-  },
-  {
-    "id": 2,
-    "title": "School ERP System",
-    "category": "Web",
-    "description": "An integrated student and fee management system. Includes a machine learning module utilizing ML.NET to predict student dropout risks and optimize fee collection schedules.",
-    "tech": ["Blazor WebAssembly", "ASP.NET Core API", "ML.NET", "PostgreSQL"],
-    "image": "images/portfolio_school.jpg",
-    "link": "case-study.html?id=2"
-  },
-  {
-    "id": 3,
-    "title": "Web & WhatsApp Bot with AI",
-    "category": "AI",
-    "description": "An automated customer support solution combining a modern web dashboard and a WhatsApp bot. Powered by Semantic Kernel and Azure AI to handle natural language queries.",
-    "tech": ["C# .NET 8", "Semantic Kernel", "WhatsApp API", "Azure AI"],
-    "image": "images/portfolio_bot.jpg",
-    "link": "case-study.html?id=3"
-  },
-  {
-    "id": 4,
-    "title": "College Portfolio Builder",
-    "category": "Web",
-    "description": "An interactive platform for students to build professional portfolios. Leverages Azure AI Vision to automatically tag and categorize uploaded certificates and project screenshots.",
-    "tech": ["ASP.NET Core", "React", "Azure AI Vision", "Cosmos DB"],
-    "image": "images/portfolio_college.jpg",
-    "link": "case-study.html?id=4"
-  },
-  {
-    "id": 5,
-    "title": "Custom Web Application",
-    "category": "Cloud",
-    "description": "A highly modular enterprise web application custom-built for specific client requirements. Features AI-powered data visualization and automated report generation via natural language.",
-    "tech": ["C# Microservices", "OpenAI API", "Redis", "Docker"],
-    "image": "images/portfolio_custom.jpg",
-    "link": "case-study.html?id=5"
-  }
-]
-,
+    {
+      "id": 1,
+      "title": "Shop Portfolio Web Application",
+      "category": "Web",
+      "description": "A scalable, high-end e-commerce platform for clothing and jewelry, featuring an AI-driven recommendation engine built on .NET that suggests products based on user browsing habits.",
+      "tech": ["ASP.NET Core MVC", "Entity Framework", "Azure OpenAI", "SQL Server"],
+      "image": "images/portfolio_shop.jpg",
+      "link": "case-study.html?id=1"
+    },
+    {
+      "id": 2,
+      "title": "School ERP System",
+      "category": "Web",
+      "description": "An integrated student and fee management system. Includes a machine learning module utilizing ML.NET to predict student dropout risks and optimize fee collection schedules.",
+      "tech": ["Blazor WebAssembly", "ASP.NET Core API", "ML.NET", "PostgreSQL"],
+      "image": "images/portfolio_school.jpg",
+      "link": "case-study.html?id=2"
+    },
+    {
+      "id": 3,
+      "title": "Web & WhatsApp Bot with AI",
+      "category": "AI",
+      "description": "An automated customer support solution combining a modern web dashboard and a WhatsApp bot. Powered by Semantic Kernel and Azure AI to handle natural language queries.",
+      "tech": ["C# .NET 8", "Semantic Kernel", "WhatsApp API", "Azure AI"],
+      "image": "images/portfolio_bot.jpg",
+      "link": "case-study.html?id=3"
+    },
+    {
+      "id": 4,
+      "title": "College Portfolio Builder",
+      "category": "Web",
+      "description": "An interactive platform for students to build professional portfolios. Leverages Azure AI Vision to automatically tag and categorize uploaded certificates and project screenshots.",
+      "tech": ["ASP.NET Core", "React", "Azure AI Vision", "Cosmos DB"],
+      "image": "images/portfolio_college.jpg",
+      "link": "case-study.html?id=4"
+    },
+    {
+      "id": 5,
+      "title": "Custom Web Application",
+      "category": "Cloud",
+      "description": "A highly modular enterprise web application custom-built for specific client requirements. Features AI-powered data visualization and automated report generation via natural language.",
+      "tech": ["C# Microservices", "OpenAI API", "Redis", "Docker"],
+      "image": "images/portfolio_custom.jpg",
+      "link": "case-study.html?id=5"
+    }
+  ]
+  ,
   testimonials: [
     {
       "quote": "MindGrid Software delivered our core transaction ledger system three weeks ahead of schedule. Their technical architecture is sound, and their engineers integrated seamlessly with our internal security and compliance teams.",
@@ -613,23 +613,23 @@ function showToast(type, message) {
 /* ==========================================================================
    10. Case Study Modal Logic
    ========================================================================== */
-window.openCaseStudyModal = function(id) {
+window.openCaseStudyModal = function (id) {
   const project = allProjects.find(p => p.id === id);
-  if(!project) return;
-  
+  if (!project) return;
+
   document.getElementById('csModalTitle').textContent = project.title;
   document.getElementById('csModalCategory').textContent = project.category.toUpperCase();
   document.getElementById('csModalDesc').innerHTML = project.caseStudyDetails || project.description;
-  
-  if(project.image) {
+
+  if (project.image) {
     document.getElementById('csModalImageContainer').style.backgroundImage = `url('${project.image}')`;
     document.getElementById('csModalImageContainer').style.display = 'block';
   } else {
     document.getElementById('csModalImageContainer').style.display = 'none';
   }
-  
+
   document.getElementById('csModalTech').innerHTML = project.tech.map(t => `<span class="portfolio-tag">${t}</span>`).join('');
-  
+
   const modal = new bootstrap.Modal(document.getElementById('caseStudyModal'));
   modal.show();
 }
@@ -638,11 +638,11 @@ window.openCaseStudyModal = function(id) {
 /* ==========================================================================
    11. Pricing Calculator
    ========================================================================== */
-window.calculateTotal = function() {
+window.calculateTotal = function () {
   const inputs = document.querySelectorAll('.pricing-calc-input');
   let total = 0;
   inputs.forEach(input => {
-    if(input.checked) {
+    if (input.checked) {
       total += parseInt(input.getAttribute('data-price'));
     }
   });
@@ -652,9 +652,9 @@ window.calculateTotal = function() {
 /* ==========================================================================
    12. AI Chatbot Widget Logic
    ========================================================================== */
-window.toggleChatbot = function() {
+window.toggleChatbot = function () {
   const win = document.getElementById('chatbotWindow');
-  if(win.style.display === 'none') {
+  if (win.style.display === 'none') {
     win.style.display = 'flex';
     document.getElementById('chatbotInput').focus();
   } else {
@@ -662,13 +662,13 @@ window.toggleChatbot = function() {
   }
 };
 
-window.sendChat = function() {
+window.sendChat = function () {
   const input = document.getElementById('chatbotInput');
   const msg = input.value.trim();
-  if(!msg) return;
-  
+  if (!msg) return;
+
   const container = document.getElementById('chatbotMessages');
-  
+
   // User message
   const userDiv = document.createElement('div');
   userDiv.className = 'user-msg';
@@ -676,7 +676,7 @@ window.sendChat = function() {
   container.appendChild(userDiv);
   input.value = '';
   container.scrollTop = container.scrollHeight;
-  
+
   // Fake Bot Delay
   setTimeout(() => {
     const botDiv = document.createElement('div');
@@ -687,8 +687,8 @@ window.sendChat = function() {
   }, 1000);
 };
 
-window.handleChatInput = function(e) {
-  if(e.key === 'Enter') {
+window.handleChatInput = function (e) {
+  if (e.key === 'Enter') {
     sendChat();
   }
 };
@@ -696,23 +696,23 @@ window.handleChatInput = function(e) {
 /* ==========================================================================
    13. WhatsApp Sales Integration
    ========================================================================== */
-window.contactSalesWhatsApp = function() {
+window.contactSalesWhatsApp = function () {
   // Hide pricing modal
   const pricingModalEl = document.getElementById('pricingModal');
   const pricingModal = bootstrap.Modal.getInstance(pricingModalEl) || new bootstrap.Modal(pricingModalEl);
   pricingModal.hide();
-  
+
   // Show details modal
   const contactModal = new bootstrap.Modal(document.getElementById('contactSalesModal'));
   contactModal.show();
 };
 
-window.submitToWhatsApp = function() {
+window.submitToWhatsApp = function () {
   const nameInput = document.getElementById('salesName');
   const phoneInput = document.getElementById('salesPhone');
   const emailInput = document.getElementById('salesEmail');
   const reqsInput = document.getElementById('salesReqs');
-  
+
   const name = nameInput.value.trim();
   const phone = phoneInput.value.trim();
   const email = emailInput.value.trim();
@@ -720,9 +720,9 @@ window.submitToWhatsApp = function() {
   const requirements = reqsInput.value.trim();
 
   let isValid = true;
-  
+
   // Name Validation
-  if(!name) {
+  if (!name) {
     nameInput.classList.add('is-invalid');
     document.getElementById('salesNameError').classList.remove('d-none');
     document.getElementById('salesNameError').classList.add('d-block');
@@ -735,7 +735,7 @@ window.submitToWhatsApp = function() {
 
   // Phone Validation (Basic 10 digits check)
   const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-  if(!phone || !phoneRegex.test(phone.replace(/\s/g, ''))) {
+  if (!phone || !phoneRegex.test(phone.replace(/\s/g, ''))) {
     phoneInput.classList.add('is-invalid');
     document.getElementById('salesPhoneError').classList.remove('d-none');
     document.getElementById('salesPhoneError').classList.add('d-block');
@@ -748,7 +748,7 @@ window.submitToWhatsApp = function() {
 
   // Email Validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!email || !emailRegex.test(email)) {
+  if (!email || !emailRegex.test(email)) {
     emailInput.classList.add('is-invalid');
     document.getElementById('salesEmailError').classList.remove('d-none');
     document.getElementById('salesEmailError').classList.add('d-block');
@@ -760,7 +760,7 @@ window.submitToWhatsApp = function() {
   }
 
   // Requirements Validation
-  if(!requirements) {
+  if (!requirements) {
     reqsInput.classList.add('is-invalid');
     document.getElementById('salesReqsError').classList.remove('d-none');
     document.getElementById('salesReqsError').classList.add('d-block');
@@ -771,30 +771,30 @@ window.submitToWhatsApp = function() {
     document.getElementById('salesReqsError').classList.add('d-none');
   }
 
-  if(!isValid) return;
+  if (!isValid) return;
 
   const inputs = document.querySelectorAll('.pricing-calc-input');
   let total = 0;
   let features = [];
-  
+
   const baseTitle = document.getElementById('baseAppTitle').innerText;
-  
+
   // Base Application
-  if(inputs[0] && inputs[0].checked) {
+  if (inputs[0] && inputs[0].checked) {
     total += parseInt(inputs[0].getAttribute('data-price'));
     features.push(baseTitle);
   }
   // AI Chatbot
-  if(inputs[1] && inputs[1].checked) {
+  if (inputs[1] && inputs[1].checked) {
     total += parseInt(inputs[1].getAttribute('data-price'));
     features.push("AI Chatbot Integration");
   }
   // Admin Dashboard
-  if(inputs[2] && inputs[2].checked) {
+  if (inputs[2] && inputs[2].checked) {
     total += parseInt(inputs[2].getAttribute('data-price'));
     features.push("Advanced Admin Dashboard");
   }
-  
+
   const formattedTotal = '₹' + total.toLocaleString('en-IN');
   const message = `Hello MindGrid Software Sales Team! I am interested in a Custom Plan.
 
@@ -814,43 +814,160 @@ ${requirements}
 *Estimated Total:* ${formattedTotal}
 
 Please let me know how we can proceed!`;
-  
+
   const encodedMessage = encodeURIComponent(message);
-  
+
   // Randomly distribute leads, but prevent sending to the user's own number (if a sales rep is testing)
   const normalizedUserPhone = phone.replace(/\D/g, '').slice(-10);
   const salesNumbers = ['917667201734', '919514302850'];
   let selectedNumber = salesNumbers[Math.floor(Math.random() * salesNumbers.length)];
-  
+
   if (selectedNumber.endsWith(normalizedUserPhone)) {
     selectedNumber = salesNumbers.find(num => !num.endsWith(normalizedUserPhone)) || salesNumbers[0];
   }
-  
+
   const whatsappUrl = `https://wa.me/${selectedNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
-  
+
   // Hide modal
   const contactModalEl = document.getElementById('contactSalesModal');
   const contactModal = bootstrap.Modal.getInstance(contactModalEl);
   if (contactModal) contactModal.hide();
 };
 
-window.openDynamicPricingModal = function(planName, basePrice) {
+window.openDynamicPricingModal = function (planName, basePrice) {
   // Update the modal's Base Application title and price
   document.getElementById('baseAppTitle').innerText = planName;
-  
+
   const baseToggle = document.getElementById('baseAppToggle');
   baseToggle.setAttribute('data-price', basePrice);
-  
+
   // Reset other toggles
   const inputs = document.querySelectorAll('.pricing-calc-input');
-  if(inputs[1]) inputs[1].checked = false;
-  if(inputs[2]) inputs[2].checked = false;
-  
+  if (inputs[1]) inputs[1].checked = false;
+  if (inputs[2]) inputs[2].checked = false;
+
   // Recalculate total
   calculateTotal();
-  
+
   // Show the modal
   const modal = new bootstrap.Modal(document.getElementById('pricingModal'));
   modal.show();
 };
+
+/* ==========================================================================
+   14. Main Contact Form Submission & XML DB Simulation
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const service = document.getElementById('contactService').value;
+      const date = document.getElementById('contactDate').value;
+      const time = document.getElementById('contactTime').value;
+      const message = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !phone || !service || !date || !time || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      const dateTimeKey = date + 'T' + time;
+
+      // Simulate reading XML Database from localStorage
+      let xmlDbStr = localStorage.getItem('meetings');
+      if (!xmlDbStr) {
+        xmlDbStr = '<?xml version="1.0" encoding="UTF-8"?><meetings></meetings>';
+      }
+
+      // Parse XML
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlDbStr, "text/xml");
+
+      // Check for conflict
+      const existingMeetings = xmlDoc.getElementsByTagName('meeting');
+      let isConflict = false;
+      for (let i = 0; i < existingMeetings.length; i++) {
+        const mTime = existingMeetings[i].getElementsByTagName('datetime')[0].textContent;
+        if (mTime === dateTimeKey) {
+          isConflict = true;
+          break;
+        }
+      }
+
+      if (isConflict) {
+        alert('Error: That date and time slot is already booked. Please choose another time.');
+        return;
+      }
+
+      // Add new meeting to XML
+      const newMeeting = xmlDoc.createElement('meeting');
+
+      const nameNode = xmlDoc.createElement('name');
+      nameNode.textContent = name;
+      newMeeting.appendChild(nameNode);
+
+      const emailNode = xmlDoc.createElement('email');
+      emailNode.textContent = email;
+      newMeeting.appendChild(emailNode);
+
+      const phoneNode = xmlDoc.createElement('phone');
+      phoneNode.textContent = phone;
+      newMeeting.appendChild(phoneNode);
+
+      const serviceNode = xmlDoc.createElement('service');
+      serviceNode.textContent = service;
+      newMeeting.appendChild(serviceNode);
+
+      const briefNode = xmlDoc.createElement('brief');
+      briefNode.textContent = message;
+      newMeeting.appendChild(briefNode);
+
+      const timeNode = xmlDoc.createElement('datetime');
+      timeNode.textContent = dateTimeKey;
+      newMeeting.appendChild(timeNode);
+
+      xmlDoc.getElementsByTagName('meetings')[0].appendChild(newMeeting);
+
+      // Save XML back to localStorage
+      const serializer = new XMLSerializer();
+      const newXmlStr = serializer.serializeToString(xmlDoc);
+      localStorage.setItem('mindgridMeetingsXml', newXmlStr);
+
+      // Create WhatsApp Message
+      const waMsg = `Hello MindGrid Software! I would like to schedule a discovery call.
+      
+*Contact Details:*
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+*Project Details:*
+Service Needed: ${service}
+Brief: ${message}
+
+*Meeting Details:*
+Date: ${date}
+Time: ${time}
+
+Looking forward to our call!`;
+
+      const encodedMessage = encodeURIComponent(waMsg);
+      const normalizedUserPhone = phone.replace(/\D/g, '').slice(-10);
+      const salesNumbers = ['917667201734', '919514302850'];
+      let selectedNumber = salesNumbers[Math.floor(Math.random() * salesNumbers.length)];
+      if (selectedNumber.endsWith(normalizedUserPhone)) {
+        selectedNumber = salesNumbers.find(num => !num.endsWith(normalizedUserPhone)) || salesNumbers[0];
+      }
+
+      alert('Meeting scheduled successfully! Redirecting to WhatsApp...');
+      window.open(`https://wa.me/${selectedNumber}?text=${encodedMessage}`, '_blank');
+      contactForm.reset();
+    });
+  }
+});
